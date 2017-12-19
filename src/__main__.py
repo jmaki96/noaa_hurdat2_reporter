@@ -59,12 +59,12 @@ def main():
     """
     Step 5: Generate report
     """
-    OUTPUT_FILENAME = "florida_landfall_hurricanes.csv"
-    OUTPUT_DIRECTORY = os.path.abspath("output")
+    OUTPUT_FILENAME = args.save + '.csv'
+    OUTPUT_DIRECTORY = os.path.abspath(args.dir)
     logger.info("Writing filtered hurricane events to {0}...".format(os.path.join(OUTPUT_DIRECTORY, OUTPUT_FILENAME)))
     if not os.path.exists(OUTPUT_DIRECTORY):
         os.mkdir(OUTPUT_DIRECTORY)
-    write_csv(hurricanes, os.path.join(OUTPUT_DIRECTORY, "florida_landfall_hurricanes.csv"))
+    write_csv(hurricanes, os.path.join(OUTPUT_DIRECTORY, OUTPUT_FILENAME))
     logger.info("Done.")
 
 

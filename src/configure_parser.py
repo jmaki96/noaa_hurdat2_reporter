@@ -15,6 +15,8 @@ def std_argparser():
     parser.add_argument('hdata', help='Names of the HURDAT2 files to be processed',
                         type=str, nargs='+')
     parser.add_argument('--v', help='Whether or not to print verbosely', action='store_true')
+    parser.add_argument('--dir', help='Specify the output directory', type=str, default='output')
+    parser.add_argument('--save', help='Specify the file save name', type=str, default='florida_landfall_windspeeds')
     args = parser.parse_args()
 
     return args
